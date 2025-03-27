@@ -1,0 +1,12 @@
+# definir los vertices del cubo con nombres
+vertices = {(0,0,0), (1,0,0), (0,1,0), (0,0,1), (1,0,1),(1,1,1), (0,1,1), (1,1,0)}
+# definir las caras del cubo 
+caras = {"Base": [(0,0,0), (1,0,0), (1,1,0), (0,1,0)], "parte superior": [(0,0,1), (1,0,1), (1,1,1), (0,1,1)], "frontal": [(0,1,1), (1,0,1), (1,0,0), (0,0,0)], "lateral izquierda": [(0,0,1), (0,1,1), (0,1,1), (0,0,0)], "lateral derecha": [(1,0,1), (1,1,1), (1,1,0), (1,0,0)], "parte trasera": [(1,1,1), (0,1,1), (1,1,0), (0,1,0)]}
+# funcion de vertice
+print("vertices del cubo:")
+for i, v in enumerate (vertices):
+    print(f"v{i + 1}: {v}")
+# funcion de cara
+print("caras del cubo:")
+for i, c in enumerate (caras):
+    print(f"c{i + 1}: {c}")
