@@ -1,0 +1,4 @@
+vertices = [(0,0,0), (1,0,0), (0,1,0), (0,0,1), (1,0,1), (1,1,1), (0,1,1), (1,0,0)]
+print("vertices del cubo:")
+for i, v in enumerate (vertices):
+    print(f"v{i + 1}: {v}")
