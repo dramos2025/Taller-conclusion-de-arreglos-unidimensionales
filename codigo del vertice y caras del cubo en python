@@ -1,0 +1,58 @@
+# Definir los vértices del cubo
+vertices = []  # almacnar los vertices
+contador = 0  # iniciar desde 0
+while contador < 8:  # decir que solamente tiene 8 vertices el cubo
+    # Se solicita al usuario ingresar las coordenadas x, y, z del vértice
+    x, y, z = map(int, input(f"Ingrese las coordenadas del vértice {contador + 1} (x, y, z): ").split())
+    
+    # Se agrega una lista para cada vertice
+    vertices.append((x, y, z))
+    
+    # se pasa al siguiente vertice 
+    contador += 1
+
+# Definir las caras del cubo con nombres
+caras = {}  #almacenar las caras del cubo
+
+#  nombres de las 6 caras del cubo
+nombres_caras = ["Base", "parte superior", "frontal", "lateral izquierda", "lateral derecha", "parte trasera"]
+
+contador = 0  # iniciar desde 0
+
+while contador < 6:  # Un cubo tiene 6 caras 
+    # Se pide al usuario ingresar los 4 vértices que forman la cara actual
+    print(f"Ingrese los cuatro vértices para la cara {nombres_caras[contador]}:")
+    
+    cara = []  # lista de caras para los cuatros vertices agragados para formar una cara
+
+    for _ in range(4):  # Cada cara está formada por 4 vértices
+        # Se solicita el número del vértice y se ajusta a índice de 1 al 8
+        indice = int(input("Número del vértice (1-8): ")) - 1
+
+        # Validar si el índice está en el rango correcto
+        if 0 <= indice < 8:
+            cara.append(vertices[indice])  # Agregar el vértice a la cara
+        else:
+            print("Índice inválido, intente de nuevo.")  # si no es valido el indice
+            continue  # reniciar el programa
+
+    # almacenar las caras en una lista 
+    caras[nombres_caras[contador]] = cara
+
+    # Se pasa a la siguiente cara
+    contador += 1
+
+# Imprimir los vértices del cubo
+print("Vértices del cubo:")
+contador = 0 # iniciar desde 0
+while contador < len(vertices):  # longitud de los vertices
+    print(f"v{contador + 1}: {vertices[contador]}")  # Imprimir cada vértice con su número
+    contador += 1 # pasar al siguiente vertice
+
+# Imprimir las caras del cubo
+print("Caras del cubo:")
+contador = 0 # iniciar desde 0
+while contador < len(caras):  # longitud de las caras 
+    nombre = list(caras.keys())[contador]  # Obtener el nombre de la cara
+    print(f"c{contador + 1}: {nombre} -> {caras[nombre]}")  # Imprimir la cara con sus vértices
+    contador += 1 # la siguiente cara 
